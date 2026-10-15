@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { X } from 'lucide-react';
 import { QuotationForm } from './QuotationForm';
 import { QuotationProcessSection } from './QuotationProcessSection';
+import makuaLogo from '../../assets/images/makua-logo.png';
 
 interface QuotationModalProps {
   isOpen: boolean;
@@ -56,7 +57,7 @@ export const QuotationModal: React.FC<QuotationModalProps> = ({
         <div className="px-6 sm:px-8 py-5 border-b border-[#E7DCD5] bg-[#F0EFE9]/95 backdrop-blur-md flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
             <img
-              src="/src/assets/images/makua-logo.png"
+              src={makuaLogo}
               alt="Makua Logo"
               className="h-8 w-auto object-contain"
             />

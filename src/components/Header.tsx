@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import makuaLogo from '../assets/images/makua-logo.png';
 
 interface HeaderProps {
   activePage: string;
@@ -91,7 +92,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Left: Logo image */}
           <div className="flex items-center gap-3">
             <img
-              src="/src/assets/images/makua-logo.png"
+              src={makuaLogo}
               alt="Makua Logo"
               className="h-10 sm:h-12 w-auto object-contain cursor-pointer transition-opacity hover:opacity-90"
               onClick={() => handleLinkClick('home')}

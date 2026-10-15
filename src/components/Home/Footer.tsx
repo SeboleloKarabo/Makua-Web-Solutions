@@ -1,6 +1,8 @@
 import React from 'react';
 import { ArrowUpRight, MapPin, Phone, Mail } from 'lucide-react';
 import makuaHeroImg from '../../assets/images/makua-hero.png';
+import makuaLogo from '../../assets/images/makua-logo.png';
+import makuaLogo2 from '../../assets/images/makua-logo2.png';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -25,12 +27,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         {/* Top Left: M Logo on top, makua-logo2 directly below it with close spacing */}
         <div className="flex flex-col gap-2 mb-8 items-start">
           <img
-            src="/src/assets/images/makua-logo.png"
+            src={makuaLogo}
             alt="Makua M Logo"
             className="h-10 sm:h-12 w-auto object-contain object-left"
           />
           <img
-            src="/src/assets/images/makua-logo2.png"
+            src={makuaLogo2}
             alt="Makua Web Solutions Logo"
             className="h-8 sm:h-10 w-auto object-contain object-left"
           />

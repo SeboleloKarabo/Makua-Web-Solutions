@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import butterflyImg from '../../assets/images/butterfly-image.png';
 
 interface FirstWeekFreeBandProps {
   onClaimFreeWeek: () => void;
@@ -74,7 +75,7 @@ export const FirstWeekFreeBand: React.FC<FirstWeekFreeBandProps> = ({ onClaimFre
         {/* Centred Butterfly Image - Maximized in size */}
         <div className="flex justify-center mb-8 sm:mb-10">
           <img
-            src="/src/assets/images/butterfly-image.png"
+            src={butterflyImg}
             alt="Butterfly"
             className="w-36 sm:w-44 md:w-52 h-auto max-h-36 sm:max-h-44 object-contain transition-transform duration-700 hover:scale-105 drop-shadow-sm"
           />
