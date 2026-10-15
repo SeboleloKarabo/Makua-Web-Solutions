@@ -29,8 +29,8 @@ export const ReservationsModal: React.FC<ReservationsModalProps> = ({
   }, [isOpen]);
 
   useEffect(() => {
-    window.addEventListener('aura-db-updated', reloadBookings);
-    return () => window.removeEventListener('aura-db-updated', reloadBookings);
+    window.addEventListener('mws-db-updated', reloadBookings);
+    return () => window.removeEventListener('mws-db-updated', reloadBookings);
   }, []);
 
   if (!isOpen) return null;

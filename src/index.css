@@ -52,7 +52,7 @@
   letter-spacing: 0.3em;
 }
 
-/* Breathing animation for AURA wordmark */
+/* Breathing animation for MWS wordmark */
 @keyframes breatheLetterSpacing {
   0%, 100% {
     letter-spacing: 0.28em;

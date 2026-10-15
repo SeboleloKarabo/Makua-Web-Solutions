@@ -7,16 +7,16 @@ import {
 } from '../data/initialData';
 
 const STORAGE_KEYS = {
-  CLASSES: 'aura_classes_v1',
-  INSTRUCTORS: 'aura_instructors_v1',
-  MEMBERSHIPS: 'aura_memberships_v1',
-  BOOKINGS: 'aura_bookings_v1',
-  STAFF: 'aura_staff_v1',
+  CLASSES: 'mws_classes_v1',
+  INSTRUCTORS: 'mws_team_v1',
+  MEMBERSHIPS: 'mws_packages_v1',
+  BOOKINGS: 'mws_bookings_v1',
+  STAFF: 'mws_staff_v1',
 };
 
 const notifyChange = () => {
   if (typeof window !== 'undefined') {
-    window.dispatchEvent(new Event('aura-db-updated'));
+    window.dispatchEvent(new Event('mws-db-updated'));
   }
 };
 
@@ -83,8 +83,8 @@ export const getStoredBookings = (): Booking[] => {
           startTime: '07:00',
           endTime: '07:55',
           room: 'The Reformer Vault',
-          userName: 'You (Sample Member)',
-          userEmail: 'member@aurastudio.com',
+          userName: 'Sample Client',
+          userEmail: 'client@makuawebsolutions.co.za',
           status: 'confirmed',
           bookedAt: new Date().toISOString()
         }

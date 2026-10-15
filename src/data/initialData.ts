@@ -542,7 +542,7 @@ export const INITIAL_MEMBERSHIPS: Membership[] = [
   },
   {
     id: 'mem-3',
-    name: 'AURA Infinite',
+    name: 'MWS Enterprise',
     price: 420,
     billingCycle: 'month',
     classesPerMonth: 'Unlimited',
@@ -696,9 +696,9 @@ export const FACILITY_GALLERY = [
 
 export const TESTIMONIALS = [
   {
-    quote: 'AURA isn’t just where I work out. It is the one hour in my day where no one demands anything of me. I leave standing three inches taller in mind and body.',
+    quote: 'Makua Web Solutions delivered our business website on schedule with exceptional attention to detail. Our online inquiries increased significantly within the first month.',
     author: 'Clara Van Der Bilt',
-    role: 'Architectural Director',
+    role: 'Managing Director',
     discipline: 'Pilates & Strength',
     memberSince: 'Member since 2024'
   },
