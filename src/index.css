@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 40 25% 94%;
+    --cream: #F0EFE9;
+    --espresso: #411401;
+    --blush: #E0CFC9;
+    --butter: #FFFAA4;
+    --peach: #F6BF8E;
+    --card: #E7DCD5;
+    --border: #CDBBB3;
+  }
+
+  body {
+    background-color: #F0EFE9;
+    color: #411401;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Taviraj', Georgia, serif;
+  }
+}
+
+/* ============================================================
+   Custom Cursors (100% inline SVG data-URLs in CSS, no JS state)
+   ============================================================ */
+
+/* DEFAULT CURSOR: Soft, blurred peach-orange dot (minimized, 24x24px, hotspot 12,12) */
+* {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><defs><filter id='glow' x='-50%' y='-50%' width='200%' height='200%'><feGaussianBlur stdDeviation='2'/></filter></defs><circle cx='12' cy='12' r='8' fill='%23E6924C' filter='url(%23glow)'/></svg>") 12 12, auto;
+}
+
+/* CONTEXTUAL "PLUS" CURSOR: 20x20px cream crosshair (hotspot 10,10) */
+.cursor-plus,
+.cursor-plus * {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'><path d='M10 3v14M3 10h14' stroke='%23F0EFE9' stroke-width='1.5' stroke-linecap='round'/></svg>") 10 10, crosshair !important;
+}
+
+/* Custom Typography & Utility Classes */
+.font-taviraj {
+  font-family: 'Taviraj', Georgia, serif;
+}
+
+.font-inter {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.tracking-wide-editorial {
+  letter-spacing: 0.3em;
+}
+
+/* Breathing animation for AURA wordmark */
+@keyframes breatheLetterSpacing {
+  0%, 100% {
+    letter-spacing: 0.28em;
+  }
+  50% {
+    letter-spacing: 0.42em;
+  }
+}
+
+.animate-breathe-wordmark {
+  animation: breatheLetterSpacing 5.5s ease-in-out infinite;
+}
+
+/* Pulsing organic gradient blob */
+@keyframes blobPulse {
+  0%, 100% {
+    transform: scale(1) translate(0px, 0px);
+    opacity: 0.65;
+  }
+  50% {
+    transform: scale(1.18) translate(8px, -6px);
+    opacity: 0.9;
+  }
+}
+
+.animate-blob-pulse {
+  animation: blobPulse 7s ease-in-out infinite;
+}
+
+/* Shimmer animation */
+@keyframes subtleShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Smooth custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F0EFE9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CDBBB3;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #411401;
+}

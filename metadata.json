@@ -1,0 +1,6 @@
+{
+  "name": "Makua Web Solutions",
+  "description": "We build professional websites, digital solutions and AI-powered tools that help businesses grow their online presence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
