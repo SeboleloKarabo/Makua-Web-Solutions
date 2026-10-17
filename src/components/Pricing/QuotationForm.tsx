@@ -277,6 +277,17 @@ export const QuotationForm: React.FC<QuotationFormProps> = ({
 
       setSubmitSuccess(true);
       setReferenceNumber(data.reference);
+
+      // Smoothly scroll the page/container from top to down to present the success state
+      setTimeout(() => {
+        const formSection = document.getElementById('quotation-form-section');
+        if (formSection) {
+          formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }, 60);
+
       if (onSuccess) {
         onSuccess(data.reference);
       }
@@ -313,11 +324,12 @@ export const QuotationForm: React.FC<QuotationFormProps> = ({
 
   return (
     <div
+      id="quotation-form-container"
       className={`bg-white rounded-[24px] sm:rounded-[32px] p-6 sm:p-10 md:p-12 shadow-[0_12px_32px_rgba(65,20,1,0.08)] border border-[#E7DCD5] ${className}`}
     >
       {submitSuccess ? (
-        /* SUCCESS CONFIRMATION STATE */
-        <div className="text-center py-6 sm:py-8 space-y-6 animate-in fade-in zoom-in-95 duration-400">
+        /* SUCCESS CONFIRMATION STATE - Cascades smoothly from top to down */
+        <div className="text-center py-6 sm:py-8 space-y-6 animate-in fade-in slide-in-from-top-8 duration-700 ease-out">
           <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#FFFAA4] rounded-full mx-auto flex items-center justify-center text-[#411401] shadow-inner">
             <CheckCircle2 className="w-10 h-10 sm:w-12 sm:h-12 text-[#411401] stroke-[2.2]" />
           </div>

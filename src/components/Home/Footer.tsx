@@ -166,7 +166,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
               {/* Original TikTok icon */}
               <a
-                href="https://tiktok.com/@makuawebsolutions"
+                href="https://www.tiktok.com/@makuawebsolutions?is_from_webapp=1&sender_device=pc"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="TikTok"

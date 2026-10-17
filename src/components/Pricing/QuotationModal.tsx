@@ -17,6 +17,8 @@ export const QuotationModal: React.FC<QuotationModalProps> = ({
   initialPackage,
   initialMockupTitle,
 }) => {
+  const modalBodyRef = React.useRef<HTMLDivElement>(null);
+
   // Lock background scroll when open
   useEffect(() => {
     if (isOpen) {
@@ -76,8 +78,14 @@ export const QuotationModal: React.FC<QuotationModalProps> = ({
         </div>
 
         {/* Scrollable Modal Body */}
-        <div className="p-4 sm:p-8 overflow-y-auto space-y-10">
-          <QuotationForm initialPackage={initialPackage} initialMockupTitle={initialMockupTitle} />
+        <div ref={modalBodyRef} className="p-4 sm:p-8 overflow-y-auto space-y-10">
+          <QuotationForm
+            initialPackage={initialPackage}
+            initialMockupTitle={initialMockupTitle}
+            onSuccess={() => {
+              modalBodyRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          />
 
           <div className="pt-2 border-t border-[#E7DCD5]">
             <QuotationProcessSection />
