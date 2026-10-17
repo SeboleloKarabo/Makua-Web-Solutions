@@ -39,6 +39,19 @@ export default function App() {
     setIsQuoteModalOpen(true);
   };
 
+  // Ensure fresh favicon in case browser cached old icon
+  useEffect(() => {
+    try {
+      const existingFavicons = document.querySelectorAll("link[rel*='icon']");
+      existingFavicons.forEach((el) => {
+        const link = el as HTMLLinkElement;
+        if (!link.href.includes('?v=')) {
+          link.href = `${link.href.split('?')[0]}?v=3`;
+        }
+      });
+    } catch (_) {}
+  }, []);
+
   // Scroll to top upon page navigation (or smooth scroll to section)
   const navigateTo = (page: string) => {
     setActivePage(page as any);
