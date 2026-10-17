@@ -16,6 +16,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onRequestQuote,
 }) => {
   const [scrollY, setScrollY] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Track scroll for dynamic bottom radius
   useEffect(() => {
@@ -31,7 +41,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
   return (
     <section
-      className="relative w-full min-h-screen flex flex-col justify-end overflow-hidden transition-all duration-300"
+      className="relative w-full min-h-[90vh] sm:min-h-screen flex flex-col justify-end overflow-hidden transition-all duration-300"
       style={{
         borderBottomLeftRadius: `${bottomRadius}px`,
         borderBottomRightRadius: `${bottomRadius}px`,
@@ -42,14 +52,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <img
           src={makuaHeroImg}
           alt="Makua Web Solutions"
-          className="w-full h-full object-cover object-center scale-[1.02] transform transition-transform duration-1000 ease-out"
+          className="w-full h-full object-cover object-[35%_center] sm:object-center transition-transform duration-700 ease-out"
           style={{
-            transform: `translateY(${scrollY * 0.18}px) scale(1.03)`,
+            transform: isMobile
+              ? `translateY(${scrollY * 0.06}px)`
+              : `translateY(${scrollY * 0.16}px) scale(1.02)`,
           }}
         />
         {/* Cinematic dark scrim towards the bottom */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#411401] via-[#411401]/50 to-[#411401]/20 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#411401]/40 via-transparent to-[#411401]/90" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#411401] via-[#411401]/55 to-[#411401]/25 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#411401]/50 via-transparent to-[#411401]/90" />
       </div>
 
       {/* Main Hero Content */}

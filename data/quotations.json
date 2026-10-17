@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "reference": "MWS-Q-2026-5980",
+    "createdAt": "2026-10-17T10:03:47.490Z",
+    "fullName": "Test Client",
+    "businessName": "Acme Corp",
+    "email": "test@example.com",
+    "phone": "0712848087",
+    "service": "Website development",
+    "package": "Starter Package — R1,500",
+    "budget": "Not specified",
+    "timeline": "Not specified",
+    "projectRequirements": "Need a clean 5-page business website with contact form."
+  }
+]

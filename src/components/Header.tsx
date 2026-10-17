@@ -93,7 +93,13 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex items-center gap-3">
             <img
               src={makuaLogo}
-              alt="Makua Logo"
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (!target.src.endsWith('/makua-logo.png')) {
+                  target.src = '/makua-logo.png';
+                }
+              }}
+              alt="Makua Web Solutions Logo"
               className="h-10 sm:h-12 w-auto object-contain cursor-pointer transition-opacity hover:opacity-90"
               onClick={() => handleLinkClick('home')}
             />

@@ -147,9 +147,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 </svg>
               </a>
 
-              {/* Original Facebook icon */}
+              {/* Official Facebook page link */}
               <a
-                href="https://facebook.com/makuawebsolutions"
+                href="https://www.facebook.com/share/1DkaU8PDwd/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
